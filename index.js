@@ -1,15 +1,25 @@
-const gridCount = document.querySelector("input");
-
-console.log(gridCount)
-const etchASketchGrid = document.querySelector('.etchASketchGrid')
-function changingGridCount (){
+const form = document.getElementById('form');
+form.addEventListener('submit', function (userEntry){
+    const gridCount = document.getElementById('gridCount').value
+    if (gridCount > 100) {
+        userEntry.preventDefault()
+        alert("Can not enter a value higher than 100.")
+    }
+    else if (gridCount > 0){
+        changingGridCount (gridCount)
+    }
+    else{
+        userEntry.preventDefault
+        alert("Value can not be 0")
+    }
+})
+function changingGridCount (gridCount){
+    const etchASketchGrid = document.querySelector('.etchASketchGrid')
     let i = 0
-    if (gridCount = Number){
-        for (i < gridCount; i++;) {
+    for (i < gridCount; i++;) {
         const individualGrids = document.createElement("div");
         individualGrids.classList.add('individualGrids');
         individualGrids.id = "grid" + i;
         etchASketchGrid.appendChild(individualGrids)
-    }}
-    console.log(gridCount)
+    }
 }
