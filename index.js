@@ -1,4 +1,6 @@
 const form = document.getElementById('form');
+const columnCount = document.getElementById('individualGrids')
+const rowCount = document.getElementById('individualRows');
 let count
 const etchASketchGrid = document.querySelector('.etchASketchGrid')
 form.addEventListener('submit', function (userEntry){
@@ -16,8 +18,13 @@ function changingGridCount (){
     for (let i = 0; i < count; i++) {
         const individualGrids = document.createElement("div");
         individualGrids.classList.add('individualGrids');
-        individualGrids.id = "grid" + i;
         individualGrids.textContent = "this is a test"
         etchASketchGrid.appendChild(individualGrids)
+    } 
+    for (let j = 0; j < count; j++) {
+        const individualRows = document.createElement("div")
+        individualRows.classList.add('individualRows')
+        individualRows.textContent = "this is a test"
+        etchASketchGrid.appendChild(individualRows)
     }
 }
