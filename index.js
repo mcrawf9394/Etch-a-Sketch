@@ -3,9 +3,6 @@ let count
 const etchASketchGrid = document.querySelector('.etchASketchGrid')
 form.addEventListener('submit', function (userEntry){
     const gridCount = document.getElementById('gridCount').value
-    if (gridCount = " "){
-        userEntry.preventDefault
-    }
     count = parseInt(gridCount)
     if (count > 100 || count <= 0) {
         userEntry.preventDefault()
