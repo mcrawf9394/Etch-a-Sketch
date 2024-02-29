@@ -1,30 +1,20 @@
-const form = document.getElementById('form');
-const columnCount = document.getElementById('individualGrids')
-const rowCount = document.getElementById('individualRows');
-let count
-const etchASketchGrid = document.querySelector('.etchASketchGrid')
-form.addEventListener('submit', function (userEntry){
-    const gridCount = document.getElementById('gridCount').value
-    count = parseInt(gridCount)
-    if (count > 100 || count <= 0) {
-        userEntry.preventDefault()
-        alert("Can not enter a value higher than 100 or less than or equal to 0.")
-    }
-    else if (count > 0){
-        changingGridCount(count)
-    }
-})
-function changingGridCount (){
-    for (let i = 0; i < count; i++) {
-        const individualGrids = document.createElement("div");
-        individualGrids.classList.add('individualGrids');
-        individualGrids.textContent = "this is a test"
-        etchASketchGrid.appendChild(individualGrids)
-    } 
-    for (let j = 0; j < count; j++) {
-        const individualRows = document.createElement("div")
-        individualRows.classList.add('individualRows')
-        individualRows.textContent = "this is a test"
-        etchASketchGrid.appendChild(individualRows)
+const container = document.getElementById('etchASketchGrid')
+const gridRow = document.createElement('div')
+const gridColoumn = document.createElement('div')
+function makeGrid (){
+    for (j = 0; j < 16; j++){
+        let column = document.createElement('div')
+        column.classList.add("gridColumns")
+        column.style.backgroundColor = 'blue'
+        column.textContent ="this is a test"
+        container.appendChild(column)
+        for (i = 0; i < 16; i++){
+            let row = document.createElement('div')
+            row.classList.add('gridRows')
+            row.style.backgroundColor = 'blue'
+            row.textContent = "this is a test"
+            column.appendChild(row)
+        }
     }
 }
+makeGrid ()

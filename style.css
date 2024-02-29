@@ -1,15 +1,21 @@
-:root {
-    --grid-cols: 1;
-    --grid-rows: 1;
-}
 #etchASketchGrid {
-    display:grid;
-    grid-gap: 1em;
-    grid-template-rows: repeat(var(--grid-rows), 1fr);
-    grid-template-columns: repeat(var(--grid-cols) 1fr);
+    display: flex;
+    width: 500px;
+    height: 400px;
+    align-content: center;
+    justify-content: center;
 }
-.grid-item {
-    padding: 1em;
-    border: 1px solid #ddd;
-    text-align: center;
+.gridColumns {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-direction: column;
+    flex: 1 1 1;
+}
+.gridRows {
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-direction: row;
+    flex: 1 1 1;
 }
