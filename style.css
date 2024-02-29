@@ -1,9 +1,9 @@
 #etchASketchGrid {
     display: flex;
-    width: 500px;
-    height: 400px;
-    align-content: center;
-    justify-content: center;
+    width: 50vw;
+    height: 50vh;
+    padding-top: 10vh;
+    padding-left: 25vw;
 }
 .gridColumns {
     display: flex;
@@ -11,6 +11,8 @@
     flex-shrink: 1;
     flex-direction: column;
     flex: 1 1 1;
+    min-height: 0;
+    min-width: 0;
 }
 .gridRows {
     display: flex;
@@ -18,4 +20,11 @@
     flex-shrink: 1;
     flex-direction: row;
     flex: 1 1 1;
+    min-height: 0;
+    min-width: 0;
+}
+#form {
+    align-self: center;
+    align-items: center;
+    text-align: center;
 }

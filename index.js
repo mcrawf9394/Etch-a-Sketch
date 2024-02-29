@@ -1,6 +1,4 @@
 const container = document.getElementById('etchASketchGrid')
-const gridRow = document.createElement('div')
-const gridColoumn = document.createElement('div')
 const form = document.getElementById('form')
 let count
 form.addEventListener('submit', function (userEntry){
@@ -9,8 +7,11 @@ form.addEventListener('submit', function (userEntry){
     getUserNumber (count)
     userEntry.preventDefault()
 })
-form.addEventListener('reset', function (){
-    
+form.addEventListener('reset', function (reset){
+    while (container.firstChild){
+        container.removeChild(container.firstChild)
+    }
+    reset.preventDefault  
 })
 function getUserNumber (){
     if (count > 100 || count <= 0) {
@@ -25,14 +26,17 @@ function makeGrid (){
         let column = document.createElement('div')
         column.classList.add("gridColumns")
         column.style.backgroundColor = 'blue'
-        column.textContent ="this is a test"
+        column.textContent =" "
         container.appendChild(column)
         for (i = 0; i < count; i++){
             let row = document.createElement('div')
             row.classList.add('gridRows')
             row.style.backgroundColor = 'blue'
-            row.textContent = "this is a test"
+            row.textContent = " "
             column.appendChild(row)
+            row.addEventListener('mouseenter', function (){
+                row.style.backgroundColor = 'red'
+            })
         }
     }
 }
