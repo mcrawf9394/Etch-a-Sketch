@@ -17,6 +17,9 @@ function getUserNumber (){
     if (count > 100 || count <= 0) {
         alert("Can not enter a value higher than 100 or less than or equal to 0.")
     }
+    else if (container.childElementCount != 0){
+        alert("Please reset the grid.")
+    }
     else {
         makeGrid(count)
     }
